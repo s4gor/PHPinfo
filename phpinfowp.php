@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: PHPinfo
+Plugin Name: Phpinfo() WP
 Plugin URI: www.github.com/s4gor/checkWPFiles
 Description: Check PHP information.
 Version: 1.0
@@ -12,16 +12,16 @@ License: GPLv3
 
 /**
  *
- * @package phpinfo
+ * @package piforwp
  *
  */
 
 
 defined('ABSPATH') or die('Unauthorized Access');
 
-if(!class_exists('phpinfo')):
+if(!class_exists( 'piforwp' )):
 
-	class phpinfo {
+	class piforwp {
 
 		function register() {
 			add_action('admin_menu', array($this, 'add_admin_pages'));
@@ -29,7 +29,7 @@ if(!class_exists('phpinfo')):
 		}
 
 		public function add_admin_pages() {
-			add_menu_page('PHPInfo Plugin', 'PHPInfo', 'manage_options', 'php_info', array(
+			add_menu_page('phpnfo_WP', 'phpinfo(); WP', 'manage_options', 'php_info', array(
 				$this,
 				'info'
 			), 'dashicons-format-aside', 70);
@@ -52,7 +52,7 @@ if(!class_exists('phpinfo')):
 
 	}
 
-	if(class_exists('phpinfo')) $phpinfo = new phpinfo();
+	if(class_exists( 'piforwp' )) $phpinfo = new piforwp();
 	else die('Plugin internal code conflict');
 
 
